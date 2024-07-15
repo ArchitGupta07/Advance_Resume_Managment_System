@@ -1,0 +1,16 @@
+.file-upload-item {
+    margin-bottom: 10px;
+}
+
+.file-progress{
+    width: 20px;
+    height: 20px;
+}
+
+.flex{
+    display: flex;
+}
+
+.gap-2{
+    gap:2rem;
+}

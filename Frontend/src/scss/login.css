@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a,
+button {
+  cursor: revert;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::-moz-placeholder {
+  color: unset;
+}
+
+::placeholder {
+  color: unset;
+}
+
+h2 {
+  font-size: 1.4rem;
+  color: #333333;
+  font-family: "Inter";
+}
+
+h4 {
+  font-size: 0.8rem;
+  color: #333333;
+  font-family: "Inter";
+  padding-bottom: 6px;
+}
+
+p {
+  color: #333333;
+  font-size: 0.8rem;
+  font-family: "Inter";
+}
+
+label {
+  padding-bottom: 0.4rem;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.btn {
+  width: 100%;
+  color: #ffffff;
+  padding: 0.6rem;
+  background: #0052f1;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border: 0.1rem solid #0052f1;
+}
+
+.btn:hover {
+  background-color: #ffffff;
+  color: #0052f1;
+  font-weight: 400;
+  transition: 0.4s ease-in-out;
+}
+
+.login {
+  max-width: 620px;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 32px;
+}
+.login-titles {
+  text-align: start;
+  color: #333333;
+  font-family: "Inter";
+}
+.login-titles h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.login-titles p {
+  padding-top: 6px;
+  font-size: 1.13rem;
+  font-family: "Inter";
+}
+.login-Bgdesign {
+  width: 400px;
+  position: absolute;
+  left: 72%;
+  top: 44%;
+  z-index: -10;
+  opacity: 0.5;
+}
+
+.loginForm-Container {
+  padding: 48px 28px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1rem;
+  border-radius: 16px;
+  box-shadow: 0px 56px 96px 0px rgba(169, 191, 234, 0.3098039216);
+  background-color: #ffffff;
+}
+.loginForm-Container .LabelContainer label {
+  padding-bottom: 12px;
+}
+.loginForm-input {
+  background: transparent;
+  border-radius: 6px;
+  border: 1px solid rgba(117, 117, 117, 0.51);
+  padding: 1rem;
+  cursor: pointer;
+}
+.loginForm-input input {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-weight: 400;
+  color: #a6a6a6;
+  font-family: "Inter";
+}
+.loginForm-input input::-moz-placeholder {
+  font-size: 0.88rem;
+  color: #a6a6a6;
+}
+.loginForm-input input::placeholder {
+  font-size: 0.88rem;
+  color: #a6a6a6;
+}
+
+.PasswordContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.PasswordIcon {
+  color: rgb(214, 213, 213);
+  height: 1rem;
+  width: 1rem;
+}
+
+.LabelContainer {
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: #333333;
+  font-family: "Inter";
+  display: flex;
+  flex-direction: column;
+}
+
+.CheckboxContainer {
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: #333333;
+  font-family: "Inter";
+  display: inline-flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.responsePara {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: red;
+  font-family: "Inter";
+  padding-left: 0.2rem;
+}
+
+.LoginPage {
+  position: relative;
+}
+.LoginPage-Container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  overflow: hidden;
+  padding: 0 4rem;
+}
+.LoginPage-LogoContainer {
+  padding: 38px 35px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffff;
+  font-family: "Inter";
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.LoginPage-LogoContainer h2 {
+  font-size: 32px;
+  font-weight: 500;
+}
+.LoginPage-logo {
+  height: 52px;
+  width: 52px;
+}
+.LoginPage-border {
+  height: 52px;
+  width: 1px;
+  border: 1px solid #ffffff;
+  margin: 0 12px 0 16px;
+}
+.LoginPage-CarouselContainer {
+  background-color: #0656cf;
+}
+.LoginPage-Carousel {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.LoginPage-CarouselImages {
+  min-width: 40px;
+  flex: 1 0 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.LoginPage-CarouselImages img {
+  margin-bottom: 20px;
+}
+.LoginPage-CarouselImages h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  font-family: "Inter";
+  text-align: center;
+}
+.LoginPage-CarouselImages p {
+  width: 100%;
+  line-height: 1rem;
+  text-align: center;
+  line-height: 24px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Inter";
+}
+
+.title {
+  color: #ffffff;
+  font-size: 1.4rem;
+  padding: 0px;
+}
+
+.CarouselImg {
+  width: 88%;
+  text-align: center;
+}
+
+.dots {
+  position: absolute;
+  bottom: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.dot.active {
+  background-color: #fff;
+  transform: scale(1.6, 0.8);
+  border-radius: 36%;
+}
+
+#CarouselContainer {
+  display: flex;
+  width: 68%;
+  overflow: hidden;
+}
+
+body {
+  overflow: hidden;
+}/*# sourceMappingURL=Login.css.map */

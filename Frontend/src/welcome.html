@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./scss/MainPage.css" />
+  </head>
+  <body class="body">
+    <header class="Header-Container" id="Header"></header>
+    <main id="WelcomeMain">
+      <section id="Dashboard" class="Dashboard-container">
+        <div class="Dashboard-welcomeContainer">
+          <div class="textContainer">
+            <h2>Attract top talent effortlessly</h2>
+            <p>Simplify recruitment and find your next hero for the team</p>
+          </div>
+          <img
+            src="./assets/DashboardPng2.png"
+            class="Dashboard-Image"
+            alt="DashboardPng"
+          />
+        </div>
+        <div class="Dashboard-ContentContainer">
+          <div class="Dashboard-SubContentContainer">
+            <div class="SubContentContainer-Elements">
+              <h2>Resume Category (<span id="Categorys"></span>)</h2>
+
+              <div class="ButtonContainer">
+                <button class="Add" id="CategoryAddFolder">
+                  <svg class="Icon">
+                    <use xlink:href="./Icons/icons.svg#plus" />
+                  </svg>
+                  Add Folder
+                </button>
+
+                <button class="upload primary" id="UploadResumes">
+                  <svg class="Icon">
+                    <use xlink:href="./Icons/icons.svg#plus" />
+                  </svg>
+                  Upload Resumes
+                </button>
+              </div>
+            </div>
+            <ul id="ContainerList" class="ContainerList"></ul>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section modal"
+        id="SubCategorySection"
+        style="display: none"
+      >
+        <div class="section-CategorySubContainer">
+          <div class="section-SubHeadingContainer">
+            <h4 class="SubCategoryHeading">
+              <span id="SubCategoryHeading"></span> (<span
+                id="SubCategoryHeadingValue"
+              ></span
+              >)
+            </h4>
+            <svg class="Icon" id="CloseSubContainer">
+              <use xlink:href="./Icons/icons.svg#close" />
+            </svg>
+          </div>
+          <div class="section-subCategory">
+            <div class="Header-Filters">
+              <input
+                name="searchcategory"
+                type="text"
+                class="Header-keywords"
+                id="SubCategorySearchFilters"
+                placeholder=" Search Folders "
+                autocomplete="off"
+              />
+              <!-- <button class="Header-FilterButton" id="SubCategory">
+                <svg class="Icon" id="Icon">
+                  <use xlink:href="./Icons/icons.svg#SearchIcon" />
+                </svg>
+              </button> -->
+              <svg
+                class="Icon"
+                id="ClearSubFolderSearchValue"
+                style="display: none"
+              >
+                <use xlink:href="./Icons/icons.svg#close" />
+              </svg>
+            </div>
+            <button id="SubFolderAddFolder">Add Folder</button>
+          </div>
+
+          <ul id="SubContainerList" class="ContainerList"></ul>
+        </div>
+      </section>
+      <section
+        class="section"
+        id="CreateFolders-SubFolders"
+        style="display: none"
+      >
+        <div
+          class="section-CategorySubContainer AddfloderContainer"
+          id="AddFolderDisplayId"
+          style="display: none"
+        >
+          <div class="section-SubHeadingContainer">
+            <h4 class="SubCategoryHeading">Create a New Folder</h4>
+            <svg class="Icon" id="CloseAddFolder">
+              <use xlink:href="./Icons/icons.svg#close" />
+            </svg>
+          </div>
+          <div class="section-inputContainer">
+            <div class="section-AddFolderInputContainers">
+              <label>Folder Name</label>
+              <input
+                name="addfolder"
+                type="text"
+                placeholder="Enter Role/Folder Name"
+                id="AddFolderName"
+                autocomplete="off"
+              />
+            </div>
+            <div class="section-AddFolderInputContainers">
+              <label>Skills</label>
+              <textarea
+                rows="4"
+                cols="20"
+                placeholder="Enter Skills Separted by Comma(,)"
+                id="AddFolderSkills"
+              ></textarea>
+            </div>
+            <button class="AddFloder" id="SubmitAddFloder">Add Folder</button>
+          </div>
+        </div>
+        <div
+          class="section-CategorySubContainer AddfloderContainer"
+          id="EditFolderDisplayId"
+          style="display: none"
+        >
+          <div class="section-SubHeadingContainer">
+            <h4 class="SubCategoryHeading">Edit Folder Name</h4>
+            <svg class="Icon" id="CloseEditFolder">
+              <use xlink:href="./Icons/icons.svg#close" />
+            </svg>
+          </div>
+          <div class="section-inputContainer">
+            <div class="section-AddFolderInputContainers">
+              <label>Previous Folder Name</label>
+              <input
+                name="PreviousFolder"
+                type="text"
+                id="PreviousFolderName"
+                autocomplete="off"
+                disabled
+              />
+            </div>
+            <div class="section-AddFolderInputContainers">
+              <label>New Folder Name</label>
+              <input
+                name="EditFolder"
+                type="text"
+                placeholder="Type the new folder name here"
+                id="EditFolderName"
+                autocomplete="off"
+              />
+            </div>
+            <button class="AddFloder" id="SubmitEditFloder">Edit</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./js/cookie.js"></script>
+    <script src="./js/HeaderLoader.js"></script>
+    <script src="./js/Dashboard.js"></script>
+    <!-- <script src="./js/fileupload.js" defer></script> -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+      defer
+    ></script>
+    <!-- <script src="./js/header.js"></script> -->
+    <script>
+      window.onload = () => {
+        isLogout();
+      };
+    </script>
+  </body>
+</html>

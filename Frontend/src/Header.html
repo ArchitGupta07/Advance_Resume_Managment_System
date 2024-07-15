@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Header</title>
+  <!-- <link rel="stylesheet" href="./scss/Notification.css" />
+
+    <link rel="stylesheet" href="./scss/Header.css" />
+    <link rel="stylesheet" href="css/chatbot.css" />
+    <link rel="stylesheet" href="./scss/Chat.css" /> -->
+</head>
+
+<body>
+  <div class="Header-Container" id="HeaderContainer">
+    <div class="Header-SubContainer">
+      <div class="Header-logoContainer" id="Logo">
+        <img src="./assets/Logo4.png" alt="Logo" class="Header-logo" />
+        <!-- <h1 class="Header-title">ARMS</h1> -->
+      </div>
+      <div class="Header-filters-Suggestions">
+      <div class="Header-Filters">
+        <input name="mainsaerchbar" type="text" class="Header-keywords" id="SearchFilters"
+          placeholder=" Enter Keywords " autocomplete="off" />
+
+        <svg class="Icon" id="ClearSearchValue" style="display: none">
+          <use xlink:href="./Icons/icons.svg#close" />
+        </svg>
+
+        <!-- <div class="dropdown" id="ExperienceDropdown" style="display: none">
+            <ul class="dropdown-list" id="ExperienceList">
+              <li id="All">All</li>
+              <li id="item1">0 - 1 Year</li>
+              <li id="item1">1 - 2 Year</li>
+              <li id="item1">2 - 3 Year</li>
+              <li id="item2">3 - 6 Year</li>
+              <li id="item3">6 - 9 Year</li>
+              <li id="item4">9+ Year</li>
+              Add more options as needed
+            </ul>
+          </div> -->
+        <button class="Header-FilterButton" id="SearchButton">
+          <svg class="Icon">
+            <use xlink:href="./Icons/icons.svg#SearchIcon" />
+          </svg>
+        </button>
+
+      </div>
+      
+      <div class="SuggestionContainer" id="SuggestionContainer">
+        <div>
+          <ul id="SubCategoriesSuggestions"></ul>
+        </div>
+      </div>
+    </div>
+      <!-- <div class="Header-dropdownContainer" id="Location-Header">
+          <p id="LocationValue">Location</p>
+          <svg class="Icon" id="DownIcon1">
+            <use xlink:href="./Icons/icons.svg#Downarrow" />
+          </svg>
+        </div>
+        <div
+          class="Locationdropdown"
+          id="Locationdropdown"
+          style="display: none"
+        >
+          <ul class="Locationlist" id="Locationlist"></ul>
+        </div> -->
+      <!-- <div class="Header-dropdownContainer" id="Experience-Header">
+          <p id="ExperienceValue">Experience</p>
+          <svg class="Icon" id="DownIcon2">
+            <use xlink:href="./Icons/icons.svg#Downarrow" />
+          </svg>
+        </div> -->
+
+      <div class="div-contaning-bell-and-profile">
+        <!-- <button onclick="window.uploadDialog.showModal()">
+          Notification Bell
+        </button> -->
+        <div class="notification">
+          <a >
+            <div class="notBtn" >
+              <!--Number supports double digets and automaticly hides itself when there is nothing between divs -->
+              <div style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  position: relative;"  id="icon">
+                <div id="notification-dot"
+                  style="display: none; position: absolute; top:-2px; right:2.5px;background-color: blue; width: 10px; height: 10px; border-radius: 50%; box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);">
+                </div>
+                <svg style="height: 1.5rem; width: 1.5rem">
+                  <use xlink:href="./Icons/icons.svg#bellIcon" />
+                </svg>
+              </div>
+              <!-- <div class="number">2</div> -->
+
+              
+
+              <div id="notification-container" class="box">
+                <div id="clear-all" style="text-align: right; padding: 1rem 0.5rem 0 0; font-size: small; cursor: pointer; color: blue; z-index: 20;">
+                  Clear All
+                </div>
+                <div class="display">
+                  <div class="nothing">
+                    <i class="fas fa-child stick"></i>
+                    <div id="no-noti-message" class="cent">Looks Like your all caught up!</div>
+                  </div>
+
+                  
+
+                  <div id="notifications-list" class="cont">
+                    <!-- Notification Records here -->
+
+                   
+                    <div id="noti-loader-div" class="div-center div-center-specific">
+                      <div class="loader"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="ProfileContainer">
+          <div class="ProfileContainer_name">
+            <img src="./assets/Profile.png" alt="Profile" class="Header-Profile" />
+            <span>Yash Aggarwal</span>
+          </div>
+
+          <button class="LogoutBtn" onclick="Logout()">Logout</button>
+        </div>
+      </div>
+
+      <div class="Chatbot" id="Chatbot">
+        <svg class="ChatbotIcon" id="Icon">
+          <use xlink:href="./Icons/icons.svg#chatbot" />
+        </svg>
+      </div>
+
+
+
+
+      <!-- Upload Logging Modal -->
+      <!-- Upload Logging Modal End -->
+
+      <!-- <div class="chatbot-modal">
+       <button id="myBtn">Open ChatBot</button>
+
+        <div id="myModal" class="chat-modal">
+          <div class="modal-content">
+            <div class="head">
+              <p>CHATBOT.</p>
+              <span class="close">&times;</span>
+            </div>
+            <div class="recent-ques">
+              <button
+                class="ques-btn"
+                id="ques-btn"
+                onclick="addQuestion(this)"
+              >
+                "Can you help me find resumes with experience in “Java
+                programming”?"
+              </button>
+              <button
+                class="ques-btn"
+                id="ques-btn"
+                onclick="addQuestion(this)"
+              >
+                "Show me resumes of candidates with UX/UI design skills.".
+              </button>
+              <button
+                class="ques-btn"
+                id="ques-btn"
+                onclick="addQuestion(this)"
+              >
+                "Find resumes with project management experience."
+              </button>
+              <button
+                class="ques-btn"
+                id="ques-btn"
+                onclick="addQuestion(this)"
+              >
+                Exit Chatbot .
+              </button>
+            </div>
+
+            <div class="chat">
+              <div class="chat-space">
+                <p class="left">Hlo User.</p>
+                <p class="right">Lorem ipsum dolor sit.</p>
+                <p class="left">What Can I do For you?</p>
+                <p class="right">Lorem ipsum dolor sit.</p> -->
+      <!-- <p class="left">Lorem ipsum dolor sit.</p>
+              </div>
+
+              <div class="chat-input">
+                <input
+                  id="queryInput"
+                  type="text"
+                  placeholder="Type Your Query..."
+                  onkeypress="submitOnEnter(event)"
+                />
+                <button
+                  type="button"
+                  class="query-submit-btn"
+                  onclick="chat(event)"
+                >
+                  Submit
+                </button>
+                <button class="query-reset-btn" onclick="resetQuery()">
+                  <ion-icon name="reload"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="section-chatbot MiniSection-chatbot mini" id="ChatbotContainerMain">
+        <div class="section-contentContainer MiniSection-contentContainer">
+          <div class="section-actionContainer MiniSection-actionContainer">
+            <span id="MiniChatbot">
+              <svg class="minimize" id="MiniChatbotValue">
+                <use xlink:href="./Icons/icons.svg#minimize" />
+              </svg>
+            </span>
+            <span class="closeSpan" id="closeChatbot">
+              <svg class="close">
+                <use xlink:href="./Icons/icons.svg#chatclose" />
+              </svg>
+            </span>
+          </div>
+          <div class="section-chatcontent MiniSection-chatcontent" id="ChatbotSuggestedQuestions">
+            <h2>Some Recently Asked Questions</h2>
+            <ul>
+              <li onclick="addQuestion(this)">
+                <p>
+                  Can you help me find resumes with experience in “Java
+                  programming”?
+                </p>
+                <svg class="">
+                  <use xlink:href="./Icons/icons.svg#rightarrow" />
+                </svg>
+              </li>
+              <li onclick="addQuestion(this)">
+                <p>Find resumes with project management experience.</p>
+                <svg class="">
+                  <use xlink:href="./Icons/icons.svg#rightarrow" />
+                </svg>
+              </li>
+              <li onclick="addQuestion(this)">
+                <p>Show me resumes of candidates with UX/UI design skills.</p>
+                <svg class="">
+                  <use xlink:href="./Icons/icons.svg#rightarrow" />
+                </svg>
+              </li>
+              <li onclick="addQuestion(this)">
+                <p>Exit Chatbot</p>
+                <svg class="">
+                  <use xlink:href="./Icons/icons.svg#rightarrow" />
+                </svg>
+              </li>
+            </ul>
+          </div>
+          <div class="section-chatspace MiniSection-chatspace">
+            <div class="chatspace" id="Chat-space"></div>
+          </div>
+          <div class="section-questioncontent MiniSection-questioncontent">
+            <h2>Find an answer yourself</h2>
+            <div class="section-input-reset MiniSection-input-reset">
+              <div class="input">
+                <input name="querysearchchatbot" id="querysearch" type="text" placeholder="Search..."
+                  autocomplete="off" />
+              </div>
+              <span id="reset">
+                <svg class="reset">
+                  <use xlink:href="./Icons/icons.svg#reset" />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- chatbot code -->
+
+    <!-- <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"
+    ></script> -->
+
+    <!-- <script src="scripts/chatbot.js"></script> -->
+    <script src="scripts/chatbot.js"></script>
+    <script src="./js/header.js"></script>
+    <script src="./js/notification.js" defer></script>
+    <!-- <script src="./js/notification.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+@mixin position(
+  $position: null,
+  $left: null,
+  $right: null,
+  $top: null,
+  $bottom: null
+) {
+  @if $position != null {
+    position: $position;
+  }
+  @if $left != null {
+    left: $left;
+  }
+  @if $right != null {
+    right: $right;
+  }
+  @if $top != null {
+    top: $top;
+  }
+  @if $bottom != null {
+    bottom: $bottom;
+  }
+}
+
+@mixin font_size_color(
+  $font: null,
+  $font_weight: null,
+  $color: null,
+  $font-family: null
+) {
+  @if $font !=null {
+    font-size: $font;
+  }
+  @if $font_weight != null {
+    font-weight: $font_weight;
+  }
+  @if $color !=null {
+    color: $color;
+  }
+  @if $font-family != null {
+    font-family: $font-family;
+  }
+}
+
+@mixin width_height($height: null, $width: null) {
+  @if $height!=null {
+    height: $height;
+  }
+
+  @if $width!=null {
+    width: $width;
+  }
+}
+
+@mixin flex(
+  $flex: null,
+  $direction: null,
+  $justify: null,
+  $align: null,
+  $gap: null,
+  $wrap: null
+) {
+  @if $flex !=null {
+    display: $flex;
+  }
+  @if $direction !=null {
+    flex-direction: $direction;
+  }
+  @if $justify !=null {
+    justify-content: $justify;
+  }
+  @if align !=null {
+    align-items: $align;
+  }
+  @if $gap !=null {
+    gap: $gap;
+  }
+  @if $wrap !=null {
+    flex-wrap: $wrap;
+  }
+}
+@mixin grid(
+  $grid: null,
+  $columns: null,
+  $rows: null,
+  $gap: null,
+  $justify: null,
+  $align: null
+) {
+  @if $grid != null {
+    display: $grid;
+  }
+  @if $columns != null {
+    grid-template-columns: $columns;
+  }
+  @if $rows != null {
+    grid-template-rows: $rows;
+  }
+
+  @if $justify !=null {
+    justify-content: $justify;
+  }
+  @if $align !=null {
+    align-items: $align;
+  }
+  @if $gap !=null {
+    gap: $gap;
+  }
+}
+
+@function toRem($value) {
+  $remValue: ($value / 18) + rem;
+  @return $remValue;
+}
+
+$desktop-width: 1499px;
+$laptop-screen-width: 1288px;
+$ipad-pro-width: 1024px;
+$ipad-mini-width: 991px;
+$phone-width: 767px;
+$small-phone-width: 480px;

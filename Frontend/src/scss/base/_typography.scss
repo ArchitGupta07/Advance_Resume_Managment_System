@@ -1,0 +1,39 @@
+h2 {
+  @include font_size_color(1.4rem, null, $Textblack, "Inter");
+  // padding-bottom: 6px;
+}
+h4 {
+  @include font_size_color(0.8rem, null, $Textblack, "Inter");
+  padding-bottom: 6px;
+}
+p {
+  color: $Textblack;
+  font-size: 0.8rem;
+  font-family: "Inter";
+}
+
+label {
+  padding-bottom: 0.4rem;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+// ::-webkit-scrollbar {
+//   width: 0;
+// }
+
+// ::-webkit-scrollbar {
+//   height: 0;
+// }
+
+// ::-webkit-scrollbar-track {
+//   visibility:visible;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   visibility:visible;
+// }

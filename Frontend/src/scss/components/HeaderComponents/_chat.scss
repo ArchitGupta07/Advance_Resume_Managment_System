@@ -1,0 +1,337 @@
+.section {
+  &-chatbot {
+    @include position(absolute, 0, 0, 0, null);
+    height: 100vh;
+    @include flex(flex, column, center, center);
+    background-color: #3333338b;
+    backdrop-filter: blur(0.6px);
+    z-index: 40;
+    display: none;
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+  &-contentContainer {
+    @include flex(flex, column, null);
+    @include width_height(null, 74%);
+    border-radius: 16px;
+    background-color: $white;
+  }
+  &-actionContainer {
+    @include flex(flex, row, flex-end, center, 1rem);
+    padding: 1rem 1rem 0 1rem;
+    span {
+      @include flex(flex, column, center, center);
+      background-color: #eef3fd58;
+      padding: 0.2rem;
+      border-radius: 50%;
+
+      .minimize {
+        width: 1rem;
+        height: 1rem;
+        cursor: pointer;
+        // border: 2px solid green;
+      }
+      .close {
+        width: 1rem;
+        height: 1rem;
+        // border: 2px solid green;
+      }
+    }
+    .closeSpan {
+      cursor: pointer;
+      padding: 0.4rem;
+    }
+  }
+
+  &-chatcontent {
+    @include flex(flex, column, null, flex-start);
+    @include width_height(null, 100%);
+    padding: 1rem;
+
+    ul {
+      list-style: none;
+      @include width_height(null, 100%);
+      @include flex(flex, row, null, center, 1rem, wrap);
+      padding-top: 0.4rem;
+
+      li {
+        @include flex(flex, row, space-between, center);
+        padding: 1rem;
+        background-color: $white;
+        border-radius: 10px;
+        border: 0.02rem solid #7169ff37;
+        min-width: 420px;
+        // max-width: 420px;
+        flex-grow: 1;
+        flex-shrink: 1;
+        cursor: pointer;
+
+        p {
+          @include font_size_color(0.68rem, 600, $Textblack, "Inter");
+        }
+      }
+    }
+
+    svg {
+      height: 24px;
+      width: 24px;
+    }
+  }
+  &-questioncontent {
+    @include flex(flex, column, null, flex-start);
+    @include width_height(null, 100%);
+    padding: 1rem;
+
+    h2 {
+      @include font_size_color(14px, 400, $Textblack, "Inter");
+      margin-bottom: 10px;
+    }
+    .input {
+      @include width_height(null, 96%);
+      border: 1px solid #d3e1fc;
+      background-color: #d3e1fc55;
+      border-radius: 2rem;
+      @include flex(flex, row, null, center, 1rem);
+      input {
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        outline: none;
+        background-color: transparent;
+      }
+      input::placeholder {
+        @include font_size_color(null, $input-placeholder-gray);
+      }
+    }
+
+    span {
+      display: flex;
+    }
+  }
+  &-chatspace {
+    @include flex(flex, column, center, center);
+    max-height: 400px;
+    overflow-y: auto;
+    padding-top: 1rem;
+    .chatspace {
+      @include flex(flex, column);
+      gap: 0.4rem;
+      max-height: 40vh;
+      width: 96%;
+      overflow-y: auto;
+      padding: 0.4rem;
+      background-color: #f0f1f43e;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .left {
+      align-self: flex-start;
+      padding: 10px;
+      border: 2px solid #3333332d;
+      border-radius: 10px;
+      max-width: 68%;
+    }
+    .right {
+      align-self: flex-end;
+      padding: 10px;
+      border: 2px solid $darkblue;
+      border-radius: 10px;
+      max-width: 68%;
+    }
+  }
+
+  &-chatspace ::-webkit-scrollbar {
+    width: 6px;
+  }
+  &-chatspace ::-webkit-scrollbar-thumb {
+    border-radius: 2rem;
+    background-color: $darkblue;
+  }
+
+  &-input-reset {
+    @include flex(flex, row, null, center, 0.4rem);
+    background-color: $white;
+    width: 100%;
+
+    #reset {
+      padding: 8px;
+      background-color: #d3e1fcc6;
+      border-radius: 50%;
+    }
+  }
+}
+
+.reset {
+  height: 1.4rem;
+  width: 1.4rem;
+  cursor: pointer;
+}
+
+.mini .MiniSection {
+  &-chatbot {
+    @include position(absolute, 0, 0, 0, null);
+    height: 100vh;
+    // @include flex(flex, column, center, center);
+    background-color: #3333338b;
+    backdrop-filter: blur(0.6px);
+    z-index: 40;
+    display: none;
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+  &-contentContainer {
+    @include position(absolute, null, 2%, null, 10%);
+    @include flex(flex, column, null);
+    @include width_height(null, 410px);
+    max-width: 410px;
+    border-radius: 16px;
+    background-color: $white;
+  }
+  &-actionContainer {
+    @include flex(flex, row, flex-end, center, 0.6rem);
+    padding: 0.6rem 0.6rem 0 0.6rem;
+    span {
+      @include flex(flex, column, center, center);
+      background-color: #eef3fd58;
+      padding: 0.2rem;
+      border-radius: 50%;
+
+      .minimize {
+        width: 1.4rem;
+        height: 1.4rem;
+        cursor: pointer;
+        // border: 2px solid green;
+      }
+      .close {
+        width: 1rem;
+        height: 1rem;
+        // border: 2px solid green;
+      }
+    }
+    .closeSpan {
+      cursor: pointer;
+      padding: 0.4rem;
+    }
+  }
+
+  &-chatcontent {
+    @include flex(flex, column, null, flex-start);
+    @include width_height(null, 100%);
+    padding: 1rem;
+
+    ul {
+      list-style: none;
+      @include width_height(null, 100%);
+      @include flex(flex, row, null, center, 0.4rem, wrap);
+      padding-top: 0.2rem;
+      flex-grow: 1;
+      flex-shrink: 1;
+
+      li {
+        @include flex(flex, row, null, center, null);
+        padding: 0.4rem;
+        background-color: $white;
+        border-radius: 10px;
+        border: 0.02rem solid #7169ff37;
+        min-width: 380px;
+        // max-width: 420px;
+        cursor: pointer;
+
+        p {
+          @include font_size_color(10px, 600, $Textblack, "Inter");
+        }
+      }
+    }
+
+    svg {
+      height: 24px;
+      width: 24px;
+    }
+  }
+  &-questioncontent {
+    @include flex(flex, column, null, flex-start);
+    @include width_height(null, 100%);
+    padding: 1rem;
+
+    h2 {
+      @include font_size_color(14px, 400, $Textblack, "Inter");
+      margin-bottom: 10px;
+    }
+    .input {
+      @include width_height(null, 96%);
+      border: 1px solid #d3e1fc;
+      background-color: #d3e1fc55;
+      border-radius: 2rem;
+      @include flex(flex, row, null, center, 1rem);
+      input {
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        outline: none;
+        background-color: transparent;
+      }
+      input::placeholder {
+        @include font_size_color(null, $input-placeholder-gray);
+      }
+    }
+
+    span {
+      display: flex;
+    }
+  }
+  &-chatspace {
+    @include flex(flex, column, center, center);
+    max-height: 400px;
+    overflow-y: auto;
+    padding-top: 1rem;
+    .chatspace {
+      @include flex(flex, column);
+      gap: 0.4rem;
+      max-height: 40vh;
+      width: 96%;
+      overflow-y: auto;
+      padding: 0.4rem;
+      background-color: #f0f1f43e;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .left {
+      align-self: flex-start;
+      max-width: 60%;
+      padding: 10px;
+      border: 2px solid #3333332d;
+      border-radius: 10px;
+    }
+    .right {
+      align-self: flex-end;
+      padding: 10px;
+      max-width: 60%;
+      border: 2px solid $darkblue;
+      border-radius: 10px;
+    }
+  }
+
+  &-chatspace ::-webkit-scrollbar {
+    width: 6px;
+  }
+  &-chatspace ::-webkit-scrollbar-thumb {
+    border-radius: 2rem;
+    background-color: $darkblue;
+  }
+
+  &-input-reset {
+    @include flex(flex, row, null, center, 0.4rem);
+    background-color: $white;
+    width: 100%;
+
+    #reset {
+      padding: 8px;
+      background-color: #d3e1fcc6;
+      border-radius: 50%;
+    }
+  }
+}

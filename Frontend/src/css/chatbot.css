@@ -1,0 +1,176 @@
+/* The Modal (background) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+
+
+
+
+.chatbot-modal{
+    /* margin: auto; */
+    /* border: 2px solid red; */
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translate( -50%, 0);
+
+   
+}
+.chat-modal {
+    margin: auto;
+    /* max-width: 1000px; */
+    display: none; /* Hidden by default */
+    /* position: fixed; Stay in place */
+    z-index: 1; /* Sit on top */
+    /* left: 18em; */
+    top: 0;
+    width: 100%; /* Full width */
+    /* height: 100%; Full height */
+    /* overflow: auto; Enable scroll if needed */ 
+    /* background-color: rgb(0,0,0); Fallback color */
+    /* background-color: rgba(0,0,0,0.4); Black w/ opacity */
+}
+  
+  /* Modal Content/Box */
+  .modal-content {
+
+    max-width: 1000px;
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 4px solid #2983eb;
+    border-radius: 1.4rem;
+    width: 100%; /* Could be more or less, depending on screen size */
+  }
+  .modal-content .head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .head p{
+    font-size: 1.4rem;
+    padding: 0 1rem;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+
+.recent-ques{
+display: grid;
+grid-template-columns: repeat(2,1fr);
+text-align: center;
+justify-content: center;
+align-items: center;
+gap: 1rem;
+font-size: 1rem;
+/* border: 1px solid black; */
+/* margin: 2rem; */
+padding: 1.4rem;
+}
+
+.recent-ques button{
+    background-color: #DEE9FF;
+    padding: 1rem ;
+    border-radius: 1rem;
+    border: hidden;
+    font-size: 1rem;
+    font-weight: 500;
+
+}
+.recent-ques button:hover{
+  box-shadow: inset 0 0 0 1px #2983eb;
+}
+
+.chat{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.chat-space{
+    /* margin: 1rem; */
+    /* border: 1px solid red; */
+    border-radius: 1rem;
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #F4F5F6;
+    gap: 1rem;
+}
+
+.chat-space .left {
+    text-align: left; 
+    font-size: 1rem;
+    background-color: #DEE9FF;
+    padding: .8rem;
+    border-radius: 1rem;
+
+
+}
+
+.chat-space .right {
+    font-size: 1rem;
+    text-align: right; 
+    align-self: flex-end;
+    background-color: #fff;
+    padding: .8rem;
+    border-radius: 1rem;
+  }
+
+  .chat-input{
+    display: flex;
+    gap: 1rem;
+  }
+
+  .chat-input .query-submit-btn{
+    border: none;
+    border-radius: 1rem;
+    padding: 0 1.4rem;
+    background-color: rgb(95, 162, 243);
+    color: #fff;
+    font-weight: 500;
+
+  }
+
+  .chat-input .query-reset-btn{
+    border: hidden;
+    border-radius: 1rem;
+    padding: 0 1.4rem;
+    background-color: rgb(226, 85, 53);
+    color: #fff;
+    font-weight: 800;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+
+  }
+  .chat-input .query-submit-btn:hover{
+    box-shadow: inset 0 0 0 2px #0d2a4c;
+  }
+  .chat-input .query-reset-btn:hover{
+    box-shadow: inset 0 0 0 2px #7c0808;
+  }
+
+
+.chat-input input{
+    border: none;
+    background-color:#F4F5F6 ;
+    border-radius: 1rem;
+    padding: 1rem;
+    flex-grow: 1;
+    width: 100%;
+}

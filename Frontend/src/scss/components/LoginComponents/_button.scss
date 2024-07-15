@@ -1,0 +1,17 @@
+.btn {
+  width: 100%;
+  color: $white;
+  padding: 0.6rem;
+  background: $darkblue;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border: 0.1rem solid $backgraoundBlue;
+}
+.btn:hover {
+  background-color: $white;
+  color: $darkblue;
+  font-weight: 400;
+  transition: 0.4s ease-in-out;
+}

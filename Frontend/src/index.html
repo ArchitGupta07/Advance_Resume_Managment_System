@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ARMSS</title>
+
+    <link rel="stylesheet" href="./scss/login.css" />
+  </head>
+
+  <body>
+    <main>
+      <section class="LoginPage-Container">
+        <div class="LoginPage-CarouselContainer">
+          <div class="LoginPage-LogoContainer">
+            <img
+              src="./assets/logo.png"
+              alt="CompanyLogo"
+              class="LoginPage-logo"
+            />
+
+            <span class="LoginPage-border"></span>
+
+            <h2 class="title">ARMSS</h2>
+          </div>
+
+          <div class="LoginPage-Carousel">
+            <div id="CarouselContainer">
+              <div class="LoginPage-CarouselImages">
+                <img
+                  src="./assets/carouselF1.png"
+                  alt="Carousel"
+                  class="CarouselImg"
+                />
+
+                <h4>Simplify, Organize, and Hire</h4>
+
+                <p>
+                  Experience the ease of finding, organizing, and hiring talent
+                  with ARMS
+                </p>
+              </div>
+
+              <div class="LoginPage-CarouselImages">
+                <img
+                  src="./assets/carouselF2.png"
+                  alt="Carousel"
+                  class="CarouselImg"
+                />
+
+                <h4>Turning Numbers into Action</h4>
+
+                <p>
+                  Experience the ease of finding, organizing, and hiring talent
+                  with ARMS
+                </p>
+              </div>
+
+              <div class="LoginPage-CarouselImages">
+                <img
+                  src="./assets/carouselF3.png"
+                  alt="Carousel"
+                  class="CarouselImg CarouselImg2"
+                />
+
+                <h4>Discover Talent Everywhere</h4>
+
+                <p>
+                  Experience the ease of finding, organizing, and hiring talent
+                  with ARMS
+                </p>
+              </div>
+            </div>
+
+            <div class="dots">
+              <span class="dot active"></span>
+
+              <span class="dot"></span>
+
+              <span class="dot"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="login">
+          <div class="login-titles">
+            <h2>Login in your Account</h2>
+
+            <p>Welcome ! Enter your details.</p>
+          </div>
+
+          <form id="LoginForm" class="loginForm-Container">
+            <div class="LabelContainer">
+              <label for="Loginusername">Email ID / Username</label>
+
+              <div class="loginForm-input" id="Input1">
+                <input
+                  type="text"
+                  id="Loginusername"
+                  name="Email"
+                  onfocus="toFocus()"
+                  placeholder="Enter your active Email ID / Username"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+
+            <div class="LabelContainer">
+              <label for="Loginpassword">Password</label>
+
+              <div class="loginForm-input PasswordContainer" id="Input2">
+                <input
+                  type="password"
+                  id="Loginpassword"
+                  name="Password"
+                  autocomplete="off"
+                  onfocus="toFocus()"
+                  placeholder="Enter your Password"
+                />
+
+                <div id="Icon">
+                  <svg class="PasswordIcon" id="IconValue">
+                    <use xlink:href="./Icons/icons.svg#PasswordIcon" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="CheckboxContainer">
+              <input
+                type="checkbox"
+                id="checkbox"
+                name="option1"
+                value="True"
+                autocomplete="off"
+              />
+
+              <label for="checkbox">Remember Me</label>
+            </div>
+
+            <p id="responsePara" class="responsePara"></p>
+
+            <button type="submit" class="btn">Login</button>
+          </form>
+
+          <img
+            src="./assets/circles.png"
+            alt="Login-Bgdesign"
+            class="login-Bgdesign"
+          />
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/cookie.js"></script>
+  </body>
+</html>

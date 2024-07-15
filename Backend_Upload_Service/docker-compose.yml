@@ -1,0 +1,7 @@
+services:
+  image: 
+    resume-management-service-be: 
+      ports: 
+        - ["8000", "8000"]
+      cmd: 
+        - ["pip", "install"]

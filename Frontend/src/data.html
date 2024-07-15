@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./scss/MainPage.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="Header-Container" id="Header"></header>
+    <main id="dataMain">
+      <section class="Datasection">
+        <div class="Datasection-BackPage">
+          <span class="BackArrow" id="BackArrow">
+            <svg>
+              <use xlink:href="./Icons/icons.svg#BackPageArrow" />
+            </svg>
+          </span>
+          <h4>Back<span id="DashboardFolderName"></span></h4>
+        </div>
+        <div class="Datasection-TitleContainer">
+          <div class="Datasection-RoleContainer">
+            <h2 id="heading" class="heading"></h2>
+            <p id="paraelemnet">
+              Here are Tailored Results Based on Your Search
+            </p>
+          </div>
+          <div class="Datasearchcontainer">
+            <svg>
+              <use xlink:href="./Icons/icons.svg#DataSearchIcon" />
+            </svg>
+            <input
+              name="DatasearchContainer"
+              type="text"
+              id="searchbyname"
+              placeholder="Search"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+        <div class="Datasection-SubContainer">
+          <h2 class="heading">Total: <span id="TotalValue"></span></h2>
+          <div class="Datasection-DropdownContainers">
+            <div class="Datasection-MainPlusDropDropDown">
+              <div class="Datasection-dropdownContainer" id="Location-Header">
+                <p id="LocationValue">Location</p>
+                <svg class="Icon" id="DownIcon1">
+                  <use xlink:href="./Icons/icons.svg#Downarrow" />
+                </svg>
+              </div>
+              <div
+                class="Locationdropdown newDropdownlist"
+                id="Locationdropdown"
+                style="display: none"
+              >
+                <div class="Datasection-SearchFilter">
+                  <svg class="Icon">
+                    <use xlink:href="./Icons/icons.svg#SkillSearchIcon" />
+                  </svg>
+                  <input
+                    type="text"
+                    name="searchlocations"
+                    class="search-input"
+                    placeholder="Search"
+                    id="SearchLocation"
+                    autocomplete="off"
+                  />
+                </div>
+                <ul class="Locationlist" id="Locationlist"></ul>
+              </div>
+            </div>
+            <div
+              class="Datasection-MainPlusDropDropDown"
+              id="ExperienceMainContainer"
+            >
+              <div class="Datasection-dropdownContainer" id="Experience-Header">
+                <p id="ExperienceValue">Experience</p>
+                <svg class="Icon" id="DownIcon2">
+                  <use xlink:href="./Icons/icons.svg#Downarrow" />
+                </svg>
+              </div>
+              <div
+                class="Datasection-dropdownContainer newDropdownlist"
+                id="ExperienceDropdown"
+                style="display: none"
+              >
+                <ul class="dropdown-list" id="ExperienceList">
+                  <li id="All">All</li>
+                  <li id="item1">0 - 1 Year</li>
+                  <li id="item2">1 - 3 Year</li>
+                  <li id="item3">3 - 5 Year</li>
+                  <li id="item4">5 - 9 Year</li>
+                  <li id="item5">9+ Year</li>
+                </ul>
+              </div>
+            </div>
+            <div class="Datasection-MainPlusDropDropDown">
+              <div class="Datasection-dropdownContainer" id="Skill-Header">
+                <p id="SkillValue">Skills</p>
+                <svg class="Icon" id="DownIcon3">
+                  <use xlink:href="./Icons/icons.svg#Downarrow" />
+                </svg>
+              </div>
+              <div
+                class="Locationdropdown newDropdownlist"
+                id="SkillDropdown"
+                style="display: none"
+              >
+                <div class="Datasection-SearchFilter">
+                  <svg class="Icon">
+                    <use xlink:href="./Icons/icons.svg#SkillSearchIcon" />
+                  </svg>
+                  <input
+                    name="searchskills"
+                    type="text"
+                    class="search-input"
+                    placeholder="Search"
+                    id="SearchSkills"
+                    autocomplete="off"
+                  />
+                </div>
+                <ul class="Locationlist" id="SkillList"></ul>
+              </div>
+            </div>
+            <div
+              class="Datasection-MainPlusDropDropDown"
+              id="DateMainContainer"
+            >
+              <div class="Datasection-dropdownContainer" id="Date-Header">
+                <p id="DateValue">Date</p>
+                <svg class="Icon" id="DownIcon4">
+                  <use xlink:href="./Icons/icons.svg#Downarrow" />
+                </svg>
+              </div>
+              <div
+                class="Datasection-dropdownContainer newDropdownlist"
+                id="DateDropdown"
+                style="display: none"
+              >
+                <ul class="dropdown-list newDropdownlist" id="DateList">
+                  <li id="DateAll">All</li>
+                  <li id="Dateitem1">Today</li>
+                  <li id="Dateitem2">7 days</li>
+                  <li id="Dateitem3">30 days</li>
+                  <li id="Dateitem4">60 days</li>
+                  <li id="Dateitem5">6 Months</li>
+                  <li id="Dateitem6">12 Months</li>
+                </ul>
+              </div>
+            </div>
+            <button id="uploadresumes">
+              <svg class="Icon" id="Icon">
+                <use xlink:href="./Icons/icons.svg#plus" />
+              </svg>
+              Upload Resumes
+            </button>
+          </div>
+        </div>
+        <div class="Datasection-SearchHistory" id="SearchHistoryContainer">
+          <div>
+            <h4>Location</h4>
+            <ul
+              class="Datasection-SearchFiltersDisplay"
+              id="LocationSearchHistory"
+            ></ul>
+            <div class="Showmorecontainerposition">
+              <span
+                id="LocationSearchHistory-span"
+                class="diableContainer"
+              ></span>
+              <ul
+                id="LocationSearchHistory-Overflow"
+                class="Datasection-SearchFiltersDisplay ShowMoreContainer diableContainer"
+              ></ul>
+            </div>
+          </div>
+
+          <div>
+            <h4>Experience</h4>
+            <ul
+              class="Datasection-SearchFiltersDisplay"
+              id="ExperienceSearchHistory"
+            ></ul>
+            <div class="Showmorecontainerposition">
+              <span
+                id="ExperienceSearchHistory-span"
+                class="diableContainer"
+              ></span>
+              <ul
+                id="ExperienceSearchHistory-Overflow"
+                class="Datasection-SearchFiltersDisplay ShowMoreContainer diableContainer"
+              ></ul>
+            </div>
+          </div>
+          <div>
+            <h4>Skills</h4>
+            <ul
+              class="Datasection-SearchFiltersDisplay"
+              id="SkillSearchHistory"
+            ></ul>
+            <div class="Showmorecontainerposition">
+              <span id="SkillSearchHistory-span" class="diableContainer"></span>
+              <ul
+                id="SkillSearchHistory-Overflow"
+                class="Datasection-SearchFiltersDisplay ShowMoreContainer diableContainer"
+              ></ul>
+            </div>
+          </div>
+          <div>
+            <button id="ClearHistory">Clear</button>
+          </div>
+        </div>
+        <div class="Datasection-maindataContainer">
+          <ul class="datalistemsclass">
+            <div class="Datasection-headingContainer">
+              <h4>Name</h4>
+              <h4>Role</h4>
+              <h4>Skills</h4>
+              <h4>Experience</h4>
+              <h4>E-mail</h4>
+              <h4>Location</h4>
+              <h4>Contact Number</h4>
+              <h4 id="DatasortUpdateDate">Upload Date</h4>
+              <h4>Action</h4>
+            </div>
+            <div id="datalistItems"></div>
+          </ul>
+          <div id="controls">
+            <div class="PerPage-records">
+              <select id="perPageRecords">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+              </select>
+              <p>Records</p>
+            </div>
+            <button id="previous-button">
+              <svg class="sidearrow">
+                <use xlink:href="./Icons/icons.svg#arrow" />
+              </svg>
+            </button>
+
+            <span id="page-number">Page_of_</span>
+            <button id="next-button">
+              <svg class="sidearrow leftsidearrow">
+                <use xlink:href="./Icons/icons.svg#arrow" />
+              </svg>
+            </button>
+            <input
+              name="pageno"
+              type="number"
+              id="jump-input"
+              placeholder="Page number"
+              autocomplete="off"
+            />
+            <button id="jump-button">Jump</button>
+          </div>
+        </div>
+      </section>
+      <section class="Loader-section" id="loader" style="display: none">
+        <div class="spinner-loader"></div>
+      </section>
+      <section class="viewdatasection" id="viewsection" style="display: none">
+        <div class="pdf">
+          <iframe id="viewcandidatedata" src=""></iframe>
+          <div class="pdf-options">
+            <div class="viewdatacloseicon" id="viewdatacloseicon">
+              <svg>
+                <use xlink:href="./Icons/icons.svg#close" />
+              </svg>
+            </div>
+
+            <a id="viewdatadownloadiconA" href="">
+              <div
+                class="viewdatacloseicon viewdatadownloadicon"
+                id="viewdatadownloadicon"
+              >
+                <svg>
+                  <use xlink:href="./Icons/icons.svg#downloadIcon" />
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- <script src="./js/cookie.js"></script> -->
+    <!-- <script src="./js/HeaderLoader.js"></script> -->
+    <!-- <script src="scripts/chxatbot.js"></script> -->
+    <script src="./js/data.js"></script>
+    <script>
+      window.onload = () => {
+        isLogout();
+      };
+    </script>
+  </body>
+</html>

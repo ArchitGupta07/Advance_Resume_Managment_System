@@ -1,0 +1,266 @@
+.Header {
+  &-Container {
+    padding: 1.5rem 2rem;
+    background-color: $white;
+    @include flex(flex, null, space-between, center);
+    // border-bottom: 0.1px solid #bfbfbfb6;
+    box-shadow: 0 0 8px 0 #00000026;
+  }
+  &-SubContainer {
+    width: 100%;
+    @include flex(flex, row, space-between, center);
+  }
+  &-filters-Suggestions {
+    width: 60%;
+    @include flex(flex, row, center, center);
+    position: relative;
+  }
+  &-Filters {
+    @include width_height(null, 100%);
+    @include flex(flex, row, space-between, center);
+    background-color: #f4f7ff;
+    border: 0.8px solid #e1eaff;
+    border-radius: 2rem;
+    padding: 0.2rem;
+    gap: 5px;
+  }
+  &-logoContainer {
+    // @include width_height(null, 8%);
+    // @include flex(flex, column, center, center);
+    @include font_size_color(0.48rem, 600, $Textblack, "Inter");
+  }
+  &-logo {
+    @include width_height(54px, 89px);
+    cursor: pointer;
+  }
+  &-dropdownContainer {
+    border: 1px solid #e1eaff;
+    padding: 0.6rem;
+    border-radius: 2rem;
+    @include width_height(5vh, 16.8%);
+    @include flex(flex, row, space-between, center);
+
+    p {
+      @include font_size_color(0.88rem, 400, $Textblack, "Inter");
+    }
+  }
+  &-FilterButton {
+    border-radius: 50%;
+    background-color: $backgraoundBlue;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    @include flex(flex, row, space-between, center);
+  }
+  &-keywords {
+    @include font_size_color(14px, 400, null, "Inter");
+    @include width_height(null, 100%);
+    background-color: transparent;
+    padding: 14px 1rem;
+    border: none;
+    outline: none;
+    border-radius: 1.6rem 0 0 1.6rem;
+  }
+  &-keywords::placeholder {
+    @include font_size_color(14px, 400, #33333399, "Inter");
+  }
+
+  &-Profile {
+    border-radius: 50%;
+  }
+}
+.ChatbotIcon {
+  @include width_height(2rem, 1.4rem);
+}
+.Icon {
+  @include width_height(17px, 17px);
+  transform: rotate(0turn);
+  transition: transform 0.6s ease;
+}
+.IconStyles {
+  transform: rotate(0.5turn);
+  transition: transform 0.6s ease;
+}
+
+.dropdownVisible {
+  @include width_height(34vh, 16%);
+  @include position(absolute, null, 32%, 90%, null);
+  border-radius: 0.6rem;
+  box-shadow: 0 2px 4px 0px rgb(0, 0, 0, 0.3);
+  background-color: $white;
+  z-index: 10;
+  max-height: 34vh;
+  overflow-y: auto;
+}
+.dropdown-list li,
+.Locationlist li {
+  line-height: 2;
+  padding: 0.4rem 0 0 1rem;
+  @include font_size_color(0.8rem, null, null, "Inter");
+}
+
+.Locationdropdown input {
+  @include width_height(4vh, 100%);
+}
+
+.dropdown-list li:hover,
+.Locationlist li:hover {
+  background-color: #f6f9ff;
+  color: #0052f1;
+}
+
+.continue-upload {
+  // display: none;
+  position: fixed;
+  right: 2%;
+  top: 84.8%;
+  bottom: 2%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 0.4rem;
+  background-color: #0052f1;
+  z-index: 0;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1400px) {
+  .continue-upload {
+    top: 82.8%;
+  }
+}
+
+.continue-upload-img {
+  height: 1.5rem;
+  width: 1.4rem;
+  z-index: 1;
+  /* color: white; */
+  filter: brightness(0) invert(1);
+}
+
+.Chatbot {
+  @include position(fixed, null, 2%, 90.8%, 2%);
+  @include width_height(50px, 50px);
+  @include flex(flex, row, center, center);
+  border-radius: 50%;
+  padding: 0.4rem;
+  background-color: $darkblue;
+  z-index: 10;
+  cursor: pointer;
+}
+.ProfileContainer {
+  @include position(relative);
+  &_name {
+    @include flex(flex, null, center, center, 9px);
+    img {
+      @include width_height(48px, 48px);
+    }
+    span {
+      @include font_size_color(14px, 600, #012365, "Inter");
+    }
+  }
+}
+
+.ProfileContainer .LogoutBtn {
+  @include position(absolute, 0%, null, null, -80%);
+  @include font_size_color(0.8rem, 480, $Textblack, "Inter");
+  padding: 0.4rem;
+  background-color: $white;
+  border-radius: 0.2rem;
+  box-shadow: 0 2px 4px 0px #bfbfbf;
+  border: none;
+  outline: none;
+  visibility: hidden;
+  transition: visibility 0.6s;
+  z-index: 20;
+}
+.ProfileContainer:hover .LogoutBtn {
+  visibility: visible;
+}
+.LogoutBtn:hover {
+  background-color: #0050f1;
+  color: $white;
+}
+.SearchItems {
+  justify-self: center;
+  @include flex(flex, row, flex-start, baseline, 0.4rem);
+  @include width_height(null, 60%);
+  border-radius: 1rem;
+  margin-top: 0.2rem;
+  margin-left: 4rem;
+  display: none;
+}
+.ClearFunction {
+  cursor: pointer;
+}
+.SearchItemsList {
+  border-radius: 0.8rem;
+  @include flex(flex, row, flex-start, center, 0.2rem);
+  @include width_height(null, 90%);
+  overflow-x: auto;
+}
+.SearchItemsList li {
+  text-align: center;
+  background-color: $backgraoundBlue;
+  border-radius: 0.8rem;
+  padding: 0.4rem;
+  @include font_size_color(0.68rem, 480, $white, "Inter");
+  @include flex(flex, row, space-between, center);
+  white-space: nowrap;
+}
+
+.SuggestionContainer {
+  @include position(absolute, 0%, null, 100%, null);
+  @include width_height(null, 40%);
+  border-radius: 1rem;
+  // @include flex(flex, row, space-around, center, 1rem);
+  background-color: $white;
+  box-shadow: 0px 2px 4px 0px #e5e9f2;
+  padding: 10px;
+  display: none;
+  z-index: 10;
+}
+
+.SuggestionContainer div {
+  min-height: 100%;
+  @include width_height(null, 100%);
+
+  h4 {
+    text-align: left;
+    border-bottom: 1px solid #bfbfbf;
+  }
+
+  ul {
+    max-height: 28vh;
+    overflow-y: auto;
+    padding: 0.2rem;
+
+    li {
+      @include font_size_color(0.8rem, 480, null, "Inter");
+      padding: 0.2rem 0;
+    }
+
+    li:hover {
+      background-color: #e3e9f7;
+    }
+  }
+}
+
+.sec {
+  .txt {
+    @include font_size_color(14px, 480, null, "Inter");
+  }
+  .sub {
+    @include font_size_color(12px, 480, null, "Inter");
+  }
+}
+
+#ClearSearchValue {
+  cursor: pointer;
+  width: 22px;
+  margin-right: 4px;
+}

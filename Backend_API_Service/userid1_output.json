@@ -1,0 +1,50 @@
+{
+    "query": "",
+    "resume_filters": {
+        "Candidate": {
+            "check": [],
+            "Experience": [
+                3.0
+            ],
+            "RoleCategory": [
+                "business analyst",
+                "test analyst"
+            ]
+        },
+        "Education": {
+            "check": [],
+            "Score": [
+                "2"
+            ]
+        },
+        "WorkExperience": {
+            "check": [],
+            "Location": [
+                "mumbai"
+            ],
+            "Role": [
+                "php developer"
+            ]
+        },
+        "Contact": {
+            "check": []
+        },
+        "Skill": {
+            "check": [],
+            "SkillName": [
+                "Python"
+            ]
+        },
+        "Address": {
+            "check": [],
+            "City": [
+                "noida"
+            ]
+        },
+        "ResumeIdList": {
+            "check": [],
+            "ResumeIdValue": []
+        }
+    },
+    "count": 74
+}

@@ -1,0 +1,16 @@
+{    
+    "Frontend Developer":["frontend developer","react developer","angular developer"],
+    "Backend Developer":["backend developer","node developer","php web developer"],
+    "Full Stack Developer":["full stack developer","mern stack developer","web application developer"],
+    "DevOps Engineer":["devops engineer"],
+    "Software Architect":["software architect"],
+    "Software Engineer":["software engineer","software developer","web developer", "graduate engineer","assistant engineer"],
+    "UI/UX Developer":["ui/ux developer","ui developer", "ux designer","ui designer","ux developer", "ui/ux designer"],
+    "Mobile App Developer":["flutter developer", "android developer","mobile app developer","android app developer","flutter intern"],
+    "Embedded Systems Engineer":["embedded systems engineer"],
+    "Quality Assurance Engineer":["quality assurance engineer","quality engineer","qa engineer","quality assurance analyst","test engineer","associate qa","software tester"],
+    "Software Engineer Intern":["software engineer intern trainee","sde intern trainee","software developer intern trainee"],
+    "Project Manager":["project manager","project consultant"],
+    "QA Lead":["qa lead","test lead"],
+    "Team Lead":["team lead","process lead"] 
+}

@@ -1,0 +1,96 @@
+.LoginPage {
+  @include position(relative);
+  &-Container {
+    @include width_height(100vh);
+    @include grid(grid, 0.8fr 1fr);
+    overflow: hidden;
+    padding: 0 4rem;
+  }
+  &-LogoContainer {
+    padding: 38px 35px;
+    @include font_size_color(1rem, 400, $white, "Inter");
+    @include flex(flex, row, null, baseline);
+    h2 {
+      font-size: 32px;
+      font-weight: 500;
+    }
+  }
+  &-logo {
+    @include width_height(52px, 52px);
+  }
+  &-border {
+    @include width_height(52px, 1px);
+    border: 1px solid $white;
+    margin: 0 12px 0 16px;
+  }
+  &-CarouselContainer {
+    background-color: #0656cf;
+  }
+
+  &-Carousel {
+    width: 100%;
+    height: 80%;
+    @include flex(flex, row, center, center);
+    position: relative;
+  }
+  &-CarouselImages {
+    min-width: 40px;
+    flex: 1 0 100%;
+    margin-bottom: 20px;
+    @include flex(flex, column, center, center);
+    img {
+      margin-bottom: 20px;
+    }
+    h4 {
+      @include font_size_color(1.4rem, 600, #fff, "Inter");
+      text-align: center;
+    }
+
+    p {
+      width: 100%;
+      line-height: 1rem;
+      text-align: center;
+      line-height: 24px;
+      @include font_size_color(1rem, 400, rgba(255, 255, 255, 0.9), "Inter");
+    }
+  }
+}
+.title {
+  color: $white;
+  font-size: 1.4rem;
+  padding: 0px;
+}
+.CarouselImg {
+  width: 88%;
+  text-align: center;
+}
+
+.dots {
+  position: absolute;
+  bottom: 35px;
+  display: flex;
+  align-items: center;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+.dot.active {
+  background-color: #fff;
+  transform: scale(1.6, 0.8);
+  border-radius: 36%;
+}
+#CarouselContainer {
+  display: flex;
+  width: 68%;
+  overflow: hidden;
+}
+
+body {
+  overflow: hidden;
+}

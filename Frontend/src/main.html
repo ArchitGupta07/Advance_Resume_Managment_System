@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <!-- <link rel="stylesheet" href="./scss/Header.css" /> -->
+  <!-- <link rel="stylesheet" href="css/chatbot.css" /> -->
+  <!-- <link rel="stylesheet" href="./scss/Chat.css" /> -->
+  <!-- <link rel="stylesheet" href="./css/uploadfiles.css" /> -->
+  <link rel="stylesheet" href="./scss/MainPage.css" />
+</head>
+
+<body class="body">
+  <header class="Header-Container" id="Header"></header>
+  <main id="mainContent"></main>
+  <div class="dialog-container">
+    <dialog id="dialog" class="upload-dialog main-upload-div">
+      <div id="upload-parent-wrapper">
+        <div id="upload-child-wrapper">
+          <div class="upload-title">
+            <div class="upload-files-title-div">
+              <span class="upload-files-title">Upload Files</span>
+            </div>
+            <div class="section-actionContainer">
+              <span id="upload-minimize-icon">
+                <svg class="upload-minimize">
+                  <use xlink:href="./Icons/icons.svg#minimize"></use>
+                </svg>
+              </span>
+              <span class="closeSpan" id="upload-reset">
+                <svg class="close">
+                  <use xlink:href="./Icons/icons.svg#chatclose"></use>
+                </svg>
+              </span>
+            </div>
+            <!-- <div class="close-icon">
+                <svg onclick="window.dialog.close();" class="upload-minimize">
+                  <use xlink:href="./Icons/icons.svg#upload-minimize" />
+                </svg>
+                <button
+                  id="upload-reset"
+                  aria-label="close"
+                  class="x close-button"
+                >
+                  ❌
+                </button>
+              </div> -->
+          </div>
+          <div id="upload-zone" class="upload-zone-div div-center flex-col">
+            <input class="isVisuallyHidden" type="file" id="fileInput" accept=".pdf, .doc, .docx, .png, .jpeg, .jpg"
+              multiple autocomplete="off" />
+
+            <img style="width: 50px; height: 50px" src="./assets/upload-icon.png" alt="" />
+            <div id="to-collapse-upload" class="text-center upload-text">
+              <span style="color: blue">Browse</span>
+              <p><span>or</span></p>
+              <p>Drag & Drop files</p>
+
+              <div class="div-center gap-1">
+                <!-- <a
+                    id="drivelink"
+                    href="drive.google.com"
+                    target="_blank"
+                    class="google-drive"
+                    >from Google Drive</a
+                  > -->
+                <!-- <img
+                    style="display: inline; width: 20px; height: 20px"
+                    src="./assets/google-drive.png"
+                    alt=""
+                  /> -->
+              </div>
+            </div>
+
+            <div id="upload-more-files" style="display: none;" class="upload-more-files">
+              Upload more Files
+              </p>
+            </div>
+
+            <div class="upload-files-supported text-center">
+              PNG, JPEG, PDF, TXT are supported
+            </div>
+          </div>
+
+          <div id="fileList"></div>
+
+          <div class="upload-files-button">
+            <div>
+              <h4 id="FileRefCount-div" class="display-none text-color-green">
+                <span id="FileRefCount"></span> Files Selected
+              </h4>
+            </div>
+            <button class="upload-button-real" role="button" id="upload-btn">
+              Upload
+            </button>
+          </div>
+
+          <div id="upload-click-div" class="upload-files-after-click-div gap-4">
+            <div class="div-center">
+              <img src="./assets/uploading.png" alt="" />
+            </div>
+            <!-- <span>Uploading</span> -->
+            <div>
+              <div id="errorCount" class="text-right right-side-upload-files-div">
+                <span id="errorTotal" style="color: #f69400">2</span>
+                <span class="font-weight-500">ERRORS</span>
+              </div>
+
+              <div id="successful-message" class="text-right right-side-upload-files-div display-none">
+                <span style="color: #008e3d">SUCCESS</span>
+              </div>
+
+              <div id="cancel-upload-div" class="text-right">
+                <span id="cancel-upload-btn" style="color: blue">CANCEL</span>
+                <span id="cancelled" style="display: none">Cancelled</span>
+              </div>
+
+              <div>
+                <progress style="width: 100%" id="progressBarOverall" max="100" value="80"></progress>
+              </div>
+              <div class="upload-files-count">
+                <span id="uploadCount">0</span>/<span id="totalCount">0</span>
+                files
+                <a style="color: #0052f1" href="#">are uploaded</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="system-error-table pt-4">
+            <div class="text-left mb-2 text-color-grey font-weight-600">
+              System Error
+            </div>
+            <div class="upload-table-head">
+              <div class="grid grid-template-col-5 text-color-grey plr-25 pb-15">
+                <h4>Status</h4>
+                <h4>Filename</h4>
+                <h4>Note</h4>
+              </div>
+
+              <ul class="border-top plr-25 ptb-15 upload-table-ele">
+                <li class="grid grid-template-col-5">
+                  <h4 class="failure">Failed X</h4>
+                  <h4>Filename</h4>
+                  <h4>Note</h4>
+                </li>
+              </ul>
+
+              <ul class="border-top plr-25 ptb-15 upload-table-ele">
+                <li class="grid grid-template-col-5">
+                  <h4 class="failure">Failed X</h4>
+                  <h4>Filename</h4>
+                  <h4>Note</h4>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </div>
+
+  <div class="continue-upload" id="continue-upload" style="display: none;">
+    <img class="continue-upload-img" src="./assets/upload-icon.png" alt="" />
+  </div>
+
+
+
+  <section class="errordialog" id="showerrordialog" style="display: none">
+    <div id="uploadDialog" class="upload-log-dialog">
+      <div class="upload-logs-wrapper-div">
+        <div class="upload-log-div-top">
+          <span class="error">Error</span>
+          <button class="x" id="closeerror-btn">❌</button>
+        </div>
+
+
+        <!-- <div id="replaceordiscardLoader">
+            Fetching Updated Data....
+          </div> -->
+
+
+
+
+
+        <div id="bothErrorGrid">
+
+          <form id="replaceOrDiscard">
+            <div id="duplicate-wrapper" style="display: none;">
+              <div class="group-replace">
+                <div class="error-message">
+                  <span class="error-message-title">File Already Exists</span>
+                  <span class="error-message-description">A file with this name already exists. Would you like to
+                    discard the upload or replace the existing file?</span>
+                </div>
+                <div class="cta">
+                  <button id="replaceBtn" type="submit" class="replace-btn">
+                    Replace
+                  </button>
+                  <button id="discardBtn" type="submit" class="discard-btn">
+                    Discard
+                  </button>
+                </div>
+              </div>
+              
+
+              <div style="display: flex; gap:1rem; align-items: center; margin-bottom: 1rem;">
+                <span id="toggleDuplicateSelection"><input style="width: 1.5rem; height: 1.5rem;" type="checkbox"/></span>
+                <span id="toggle-select-text">Select all</span>
+              </div>
+
+              <div class="div-center">
+                <div id="duplicate-loader" class="duplicate-loader"></div>
+              </div>
+
+              <div id="duplicate-records" class="records-duplicate"></div>
+            </div>
+
+            <div id="corrupt-wrapper" class="corrupt-wrapper" style="display: none;">
+              <div class="error-message">
+                <span class="error-message-title">Corrupt Files Error</span>
+                <span class="error-message-description">One or more files you uploaded, may be corrupted</span>
+              </div>
+              <div id="corrupt-records" class="records-duplicate"></div>
+            </div>
+
+            <!-- <div class="duplicate-record">
+        <input
+          style="width: 1.5rem; height: 1.5rem; background: blue"
+          type="checkbox"
+          autocomplete="off"
+        />
+        <div class="both-files-grid">
+          <div class="duplicate-record-file-div">
+            <div class="duplicate-record-file-details">
+              <span class="duplicate-record-file-details-name"
+                >File Name</span
+              >
+              <span class="duplicate-record-file-details-datetime"
+                >Date and Time</span
+              >
+            </div>
+            <div class="flex items-center">
+              <svg class="duplicate-action">
+                <use xlink:href="./Icons/icons.svg#ActionIcon" />
+              </svg>
+            </div>
+          </div>
+          <div class="duplicate-record-file-div">
+            <div class="duplicate-record-file-details">
+              <span class="duplicate-record-file-details-name"
+                >File Name</span
+              >
+              <span class="duplicate-record-file-details-datetime"
+                >Date and Time</span
+              >
+            </div>
+            <div class="second-duplicate-cta-actions">
+              <div class="flex items-center">
+                <svg class="duplicate-action">
+                  <use xlink:href="./Icons/icons.svg#ActionIcon" />
+                </svg>
+              </div>
+              <span style="color: blue; text-decoration: underline"
+                >Compare</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="duplicate-record">
+        <input
+          style="width: 1.5rem; height: 1.5rem; background: blue"
+          type="checkbox"
+          autocomplete="off"
+        />
+        <div class="both-files-grid">
+          <div class="duplicate-record-file-div">
+            <div class="duplicate-record-file-details">
+              <span class="duplicate-record-file-details-name"
+                >File Name</span
+              >
+              <span class="duplicate-record-file-details-datetime"
+                >Date and Time</span
+              >
+            </div>
+            <div class="flex items-center">
+              <svg class="duplicate-action">
+                <use xlink:href="./Icons/icons.svg#ActionIcon" />
+              </svg>
+            </div>
+          </div>
+          <div class="duplicate-record-file-div">
+            <div class="duplicate-record-file-details">
+              <span class="duplicate-record-file-details-name"
+                >File Name</span
+              >
+              <span class="duplicate-record-file-details-datetime"
+                >Date and Time</span
+              >
+            </div>
+            <div class="second-duplicate-cta-actions">
+              <div class="flex items-center">
+                <svg class="duplicate-action">
+                  <use xlink:href="./Icons/icons.svg#ActionIcon" />
+                </svg>
+              </div>
+              <span style="color: blue; text-decoration: underline"
+                >Compare</span
+              >
+            </div>
+          </div>
+        </div>
+      </div> -->
+          </form>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="viewdatasection" id="viewResumesection" style="display: none; z-index: 100">
+    <div class="pdf">
+      <iframe id="viewresssdata"  src=""></iframe>
+
+      <div class="viewdatacloseicon" id="viewdatacloseicon" style="cursor: pointer">
+        <svg>
+          <use xlink:href="./Icons/icons.svg#close" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="viewdatasection multiviewdatasection" id="compareViewResume" style="display: none; z-index: 100">
+    <div class="pdf-compare" >
+      <iframe id="resumeViewOne" src=""></iframe>
+    </div>
+
+    <div  class="pdf-compare">
+      <iframe id="resumeViewTwo" src=""></iframe>
+    </div>
+    <div class="viewdatacloseicon" id="CompareViewClose" style="cursor: pointer">
+      <svg>
+        <use xlink:href="./Icons/icons.svg#close" />
+      </svg>
+    </div>
+  </section>
+
+  <script src="./js/mainjs.js"></script>
+  <script src="./js/cookie.js"></script>
+  <script src="./js/HeaderLoader.js"></script>
+  <script src="./js/fileupload.js" defer></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" defer></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

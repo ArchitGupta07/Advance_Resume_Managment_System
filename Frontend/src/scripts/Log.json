@@ -1,0 +1,25 @@
+{
+    "query": "",
+    "resume_filters": {
+        "Candidate": {
+            "check": []
+        },
+        "Education": {
+            "check": []
+        },
+        "WorkExperience": {
+            "check": []
+        },
+        "Contact": {
+            "check": []
+        },
+        "Skill": {
+            "check": []
+        },
+        "ResumeIdList": {
+            "check": [],
+            "ResumeIdValue": []
+        }
+    },
+    "count": 0
+}

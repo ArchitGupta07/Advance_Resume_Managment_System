@@ -1,0 +1,75 @@
+{
+  "Software Development & Engineering": [
+      "Frontend Developer",
+      "Backend Developer",
+      "Full Stack Developer",
+      "Software Engineer",
+      "DevOps Engineer",
+      "Software Architect",
+      "UI/UX Developer",
+      "Mobile App Developer",
+      "Embedded Systems Engineer",
+      
+
+      "Software Engineer Intern"
+      
+  ],
+  "Project Management & Leadership": [
+      "Project Manager",
+      "Scrum Master",
+      "Program Manager",
+      "Product Owner",
+      "Project Coordinator",
+      "Team Lead",
+      "Product Manager"
+  ],
+  "Business & Consulting": [
+      "Business Analyst",
+      "Business Development Manager",
+      "Operations Analyst",
+      "Market Research Analyst"
+  ],
+  "Data & Analytics": [
+      "Data Scientist",
+      "Data Analyst",
+      "Business Intelligence Analyst",
+      "Data Engineer",
+      "Data Architect",
+      "Machine Learning Engineer",
+      "Data Visualization Specialist"
+  ],
+  "Quality Assurance & Testing": [
+    
+    "Quality Assurance Engineer",
+      "Test Analyst",
+      "Automation Engineer",
+      "Manual Tester",
+      "QA Lead",
+      "Test Manager"
+  ],
+  "Creative & Design": [
+      "Graphic Designer",
+      "UI/UX Designer",
+      "Web Designer",
+      "Motion Graphics Designer",
+      "Brand Designer",
+      "Illustrator",
+      "Art Director"
+  ],
+  "Management & Administration": [
+      "Administrative Assistant",
+      "Business Administrator",
+      "Office Administrator"
+  ],
+  "Miscellaneous & Others": [
+      "Customer Support Representative",
+      "Sales Associate",
+      "Marketing Coordinator",
+      "HR Assistant",
+      "Content Writer",
+      "Social Media Coordinator",
+      "IT Support Specialist",
+      "Research Assistant"
+  ]
+  
+}

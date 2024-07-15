@@ -1,0 +1,33 @@
+{
+    "query": "",
+    "resume_filters": {
+        "Candidate": {
+            "check": []
+        },
+        "Education": {
+            "check": []
+        },
+        "WorkExperience": {
+            "check": [
+                "Location"
+            ],
+            "Location": [
+                "mumbai"
+            ]
+        },
+        "Contact": {
+            "check": []
+        },
+        "Skill": {
+            "check": [],
+            "SkillName": [
+                "Java"
+            ]
+        },
+        "ResumeIdList": {
+            "check": [],
+            "ResumeIdValue": []
+        }
+    },
+    "count": 132
+}
